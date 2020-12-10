@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bien kieu du lieu va toan tu</title>
+</head>
+<body>
+
+<form>
+    <h1>Bài 1 : Chương trình nhập điểm của một sinh viên cho các môn</h1> <br>
+    Điểm sinh:&nbsp;<input type="number" value="." id="diemsinh" > <br>
+    Điểm lý: &nbsp;&nbsp;&nbsp;&nbsp;<input id="diemly" value=".." type="number"> <br>
+    Điểm hóa: &nbsp;<input type="number" id="diemhoa" value="..."> <br><br>
+       <input type="submit" value="Tính điểm trung bình" onclick="diemtb()"> <br> <br>
+
+    <input type="submit" value="Tính điêm tổng 3 môn" onclick="diemtong3mon()">
+
+</form> <br>
+<script src="Bien,%20kieu%20du%20lieu%20va%20toan%20tu.js"></script>
+ <h1 id="diemtb"></h1>
+<h1 id ="diemtong3mon"></h1> <br>
+
+<h1 >Bài 2 : Nhập một giá trị là độ C và chuyển nó sang độ F </h1>
+<form >
+    Nhiệt độ C :<input type="number" id="nhietdoc"> <br> <br>
+    <input type="submit" onclick="chuyendoisangf()" value="Chuyển sang độ F">  <b id="chuyendoisangf"></b>
+</form>
+<h1> Bài 3 : Chương trình tính diện tích và chu vi hình tròn</h1>
+<form>
+    Bán kính hình tròn :<input type="number" id="bankinhhinhtron"> <br>
+Đường kính hình tròn :<input type="number" id="duongkinhhinhtron"> <br>
+    <input type="submit" onclick="dientichhinhtron()" value="Diện tích hình tròn"> <b id="dientichhinhtron"></b> <br> <br>
+    <input type="submit" onclick="chuvihinhtron()" value="Chu vi hình tròn"> <b id="chuvihinhtron"></b>
+</form>
+</body>
+</html>
