@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu lệnh switch-case</title>
+</head>
+<body>
+<form>
+    Tháng : <input id="thang" type="number">
+    <input onclick="tinhsongay()" value="Tinh" type="button">
+</form>
+<script> function tinhsongay() {
+let a = parseInt(document.getElementById("thang").value)
+switch (a) {
+    case 1:
+        alert("31 days")
+        break;
+    case 2:
+        alert("28 days")
+        break;
+    case 3:
+        alert("31 days")
+        break;
+    case 4:
+        alert("30 days")
+        break;
+    case 5:
+        alert("31 days")
+        break;
+    case 6:
+        alert("30 days")
+        break;
+    case 7:
+        alert("31 days")
+        break;
+    case 8:
+        alert("30 days")
+        break;
+    case 9:
+        alert("31 days")
+        break;
+    case 10:
+        alert("30days")
+        break;
+    case 11:
+        alert("31 days")
+        break;
+    case 12:
+        alert("30 days")
+        break;
+    default:
+        alert("No month no day");
+}
+}</script>
+</body>
+</html>

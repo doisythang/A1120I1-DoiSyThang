@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+<h3>Bài 1: Chuyển từ độ C sang độ F</h3>
+<form>
+Nhập nhiệt độ C : <input type= "number" id="nhietdoc">
+    <input type="button" onclick="tinhdof()" value="Tinh">
+</form>
+<h3>Bài 2: Chuyển từ mét sang feet</h3>
+<form>
+    Nhập Mét : <input type="number" id="somet">
+    <input onclick="tinhfeet()" type="button" value="Tinh">
+</form>
+<h3>Bài 3: Tính diện tích hình vuông khi biết cạnh a</h3>
+<form>
+    Cạnh của hình vuông : <input type="number" id="canhhinhvuong">
+    <input onclick="tinhdientich()" value="Tinh" type="button">
+</form>
+<h3>Bài 4: Tính diện tích hình  chữ nhật khi biết 2 cạnh a, b</h3>
+<form>
+    Dài : <input type="number" id="dai">
+    Rộng :<input type="number" id="rong">
+    <input onclick="dientichhinhchunhat()" type="button" value="Tinh">
+</form>
+<h3>Bài 5: Tính diện tích tam giác vuông khi biết 2 cạnh kề a, b</h3>
+<form >
+Cạnh kề 1 <input id="canhke1" type="number">
+Cạnh kề 2 <input id="canhke2" type="number">
+    <input onclick="dientichtamgiacvuong()" value="Tinh" type="button">
+</form>
+<h3>Bài 6: Giải phương trình bậc 1</h3>
+<form>
+    Nhập a :<input type="number" id="Soa">
+    Nhập b :<input type="number" id="Sob">
+    <input type="button" onclick="phuongtrinhbac1()" value="Tinh">
+</form>
+<h3>Bài 7: Giải phương trình bậc 2</h3>
+<form >
+Nhập a :<input type="number" id="nhapsoa">
+Nhập b :<input  type="number" id="nhapsob">
+Nhập c :<input type="number" id="nhapsoc">
+    <input type="button" onclick="giai()" value="Tinh">
+</form>
+<h3>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không</h3>
+<form>
+    Nhập số tuổi : <input type="number" id="dotuoi">
+    <input type="button" onclick="kiemtrasotuoi()" value="Check">
+</form>
+<h3>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</h3>
+<form>
+    Nhập số a :<input type="number" id="canha">
+    Nhập số b :<input type="number" id="canhb">
+    Nhập số c :<input type="number" id="canhc">
+    <input type="button" onclick="kiemtratamgiac()" value="Check">
+</form>
+<h3>Bài 10: Viết chương trình tính giá điện</h3>
+<form>
+    Nhập số điện bạn đã tiêu thụ : <input type="number" id="sodien"> (kWh)
+<input type="button" value="Tinh" onclick="tinhtiendien()">
+</form>
+<h3>Bài 11: Viết chương trình tính thuế thu nhập cá nhân</h3>
+<form>
+    Nhập tiền lương mỗi tháng của bạn : <input type="number" id="sotienluong">(triệu đồng)
+    <input type="button" onclick="tinhthuephainop()" value="Tinh">
+</form>
+<h3>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng</h3>
+<form>
+    Số tiên ban đầu : <input type="number" id="sotienbandau">
+    Số tháng : <input type="number" id="sothang">
+    Lãi xuất : <input type="number" id="laixuat"> % tháng
+    <input type="button" value="Tinh" onclick="tinhlainganhang()">
+</form>
+<script>
+    function tinhdof() {
+        var doC,doF;
+        doC = parseInt(document.getElementById("nhietdoc").value);
+        doF = 32 + (9/5* doC) ;
+        alert("Nhiệt độ F từ C = " + doF) }
+function tinhfeet() {
+        var somet,sofeet;
+        somet = parseInt(document.getElementById("somet").value)
+    sofeet = somet * 3.3;
+        if (somet < 0 ){
+            alert("Số met không thể âm")
+        } else { alert("Số feet từ met = " + sofeet)}
+}
+function tinhdientich() {
+        var canhhinhvuong,dientich;
+
+       canhhinhvuong     = parseInt(document.getElementById("canhhinhvuong").value);
+       dientich = canhhinhvuong*canhhinhvuong;
+       if (canhhinhvuong < 0) { alert("Chiều dài của cạnh không thể âm") }
+       else { alert("Diện tích hình vuông =" + dientich) }
+}
+function dientichhinhchunhat() {
+        var dai,rong;
+        dai = parseInt(document.getElementById("dai").value);
+    rong = parseInt(document.getElementById("rong").value);
+    dientich = dai * rong;
+    if ( dai <0 || rong <0) { alert("Chiều dài hoặc rộng không thể âm")
+    }  else { alert ("Diện tích hình chữ nhật : " + dientich) }  }
+function dientichtamgiacvuong() {
+        var canhke1,canhke2,canhc,chieucao,dientich;
+        canhke1 = parseInt(document.getElementById("canhke1").value);
+        canhke2 = parseInt(document.getElementById("canhke2").value);
+    dientich = canhke2*canhke1/2;
+if ( canhke1 < 0 || canhke2 < 0) { alert("Các cạnh không thể âm")
+} else { alert("Diện tích của tam giác vuông :"+ dientich)} }
+
+function phuongtrinhbac1() {
+        var a,b,x;
+        a = parseInt(document.getElementById("Soa").value);
+        b = parseInt(document.getElementById("Sob").value);
+        x = -b/a;
+if (a == 0 && b == 0) { alert("Phương trình có vô số nghiệm") }
+ else if ( a== 0 && b !=0 ) { alert("Phường trình vô nghiệm") }
+ else ( alert("Phường trình có nghiêm là" + x ))
+}
+function giai() {
+        var a,b,c,denta,xnghiemkep,x1,x2;
+        a = parseInt(document.getElementById("nhapsoa").value);
+        b = parseInt(document.getElementById("nhapsob").value);
+        c = parseInt(document.getElementById("nhapsoc").value);
+        denta = b*b - 4*a*c;
+        d1 = Math.sqrt(denta);
+        xnghiemkep =  b/2*a;
+        x1 = (b+ d1 )/2*a
+    x2 = (b - d1)/2*a
+        if ( a == 0 ) { alert("Không còn là phương trình bậc 2")}
+        else if (denta < 0) { alert("Phường trình vô nghiệm")}
+        else if (denta == 0 ) { alert("Phương trình có hai nghiệm giống nhau x = " + xnghiemkep )}
+        else if (denta > 0 ) { alert("Phương trình có hai nghiêm phân biệt x1 =" + x1 +"và x2 ="+ x2)}
+}
+function kiemtrasotuoi() {
+        var dotuoi;
+        dotuoi = parseInt(document.getElementById("dotuoi").value);
+        if ( dotuoi < 0 || dotuoi > 120) {
+            alert("Đây không phải tuổi con người")
+        }else { alert("Độ tuổi :" + dotuoi)}
+}
+function kiemtratamgiac() { var canha,canhb,canhc;
+canha = parseInt(document.getElementById("canha").value);
+canhb = parseInt(document.getElementById("canhb").value);
+canhc = parseInt(document.getElementById("canhc").value);
+if (canha < 0 ||canhb < 0 || canhc < 0  || canha + canhb < canhc || canhb + canhc < canha || canha + canhc < canhb )
+ { alert("Không phải là tam giác") } else { alert("Đây là tam giác") }
+}
+function tinhtiendien() { let sodien;
+sodien = parseInt(document.getElementById("sodien").value);
+    bac1 = 1.484 * sodien;
+    bac2 = 1.533 * sodien;
+    bac3 = 1.786 * sodien;
+    bac4 = 2.242 * sodien;
+    bac5 = 2.503 * sodien;
+    bac6 = 2.587 * sodien;
+    if ( 0 <= sodien <= 50) { alert("Tiền điện ="+ bac1 +"VND") }
+else if ( 51 <= sodien <= 100 ) { alert("Tiền điện =" + bac2 + "VND") }
+else if ( 101 <= sodien <= 200 ) { alert("Tiền điện =" + bac3 + "VND")}
+else if ( 201 <= sodien <= 300) { alert("Tiền điện =" + bac4 + "VND")}
+else if ( 301 <= sodien <= 400) { alert("Tiền điện =" + bac5 + "VND")}
+else {{ alert("Tiền điện =" + bac6 + "VND")}}
+}
+function tinhthuephainop() {
+var soluong;
+sotienluong = parseInt(document.getElementById("sotienluong").value);
+    thue1 = sotienluong * (1 - 5/100);
+    thue2 = sotienluong * (1 - 10/100);
+    thue3 = sotienluong * (1 - 15/100);
+    thue4 = sotienluong * (1 - 20/100);
+    thue5 = sotienluong * (1 - 25/100);
+    thue6 = sotienluong * (1 - 30/100);
+    thue7 = sotienluong * (1 - 35/100);
+if ( sotienluong < 5) { alert("Bạn không đủ diều kiện để nộp thuế")}
+else if (sotienluong == 5) { alert("Thuế phải nộp =" + thue1 +"000 VND")}
+else if ( 5 < sotienluong < 10) { alert("Thuế phải nộp =" + thue2 +"000 VND")}
+else if ( 10 <sotienluong < 18) { alert("Thuế phải nộp =" + thue3 +"000 VND")}
+else if ( 18 <sotienluong < 32) { alert("Thuế phải nộp =" + thue4 +"000 VND")}
+else if ( 32 <sotienluong < 52) { alert("Thuế phải nộp =" + thue5 +"000 VND")}
+else if ( 52 < sotienluong < 80) { alert("Thuế phải nộp =" + thue6 +"000 VND")}
+else { alert("Thuế phải nộp =" + thue7 +"4000 VND")}
+}
+function tinhlainganhang() { var sotienbandau,sothang,laixuat;
+sotienbandau = parseInt(document.getElementById("sotienbandau").value);
+sothang = parseInt(document.getElementById("sotienbandau").value);
+laixuat = parseInt(document.getElementById("laixuat").value);
+
+sotienlai = sotienbandau*sothang*(laixuat/100);
+alert("Số tiền lãi :" + sotienlai)
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

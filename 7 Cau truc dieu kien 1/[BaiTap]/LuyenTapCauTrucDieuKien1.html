@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<h3>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h3>
+<form>
+    A = <input type="number" id="A"> &nbsp;
+    B = <input type="number" id="B">
+    <input type="button" value="Tinh" onclick="tinh()">
+    <p id="chiahet"></p>
+</form>
+<h3>Bài2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10</h3>
+<form>
+    Nhập tuổi:<input type="number" id="sotuoi">
+    <input type="button" value="Check" onclick="Check()">
+</form>
+<p id="hiendieukien"></p>
+<h3>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h3>
+<form>
+    Nhập số nguyên: <input id="songuyen" type="number">
+    <input type="button" onclick="kiemtrasonguyen()" value="Check">
+</form>
+<p id="chuyensonguyen"></p>
+<h3>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h3>
+<form>
+    A = <input type="number" id="songuyena">
+    B = <input type="number" id="songuyenb">
+    C = <input type="number" id="songuyenc">
+    <input type="button" value="SoSanh" onclick="sosanhabc()">
+</form>
+<p id="hienthiketqua"></p>
+<h3>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h3>
+<form>
+    Điểm kiểm tra = <input type="number" id="diemkiemtra">
+Điểm thi giữa kỳ = <input type="number" id="diemthigiuaky">
+    Điểm thi cuối kỳ = <input type="number" id="diemthicuoiky">
+   <input type="button" onclick="xemloaihocsinh()" value="Check">
+</form>
+<p id="xemloaihocsinh"></p>
+<script> function tinh() {
+    var a, b;
+    a = parseInt(document.getElementById("A").value);
+    b = parseInt(document.getElementById("B").value);
+    if (a % b == 0) {
+        document.getElementById("chiahet").innerText = "A chia het cho B";
+    } else if ( a % b == 1) {
+        document.getElementById("chiahet").innerText = "A khong chia het cho B";
+    }
+    else
+     {document.getElementById("chiahet").innerText ="Ban van chua nhap so"
+    }
+}
+
+function Check() {
+    var tuoi ;
+    tuoi = parseInt(document.getElementById("sotuoi").value)
+    if ( tuoi == 16){
+        document.getElementById("hiendieukien").innerText= "Ban du dieu kien hoc lop 10"
+    }else {
+        document.getElementById("hiendieukien").innerText= "Ban khong du dieu kien hoc lop 10"
+    }
+}
+function kiemtrasonguyen() {
+    let songuyen = parseInt(document.getElementById("songuyen").value)
+    if ( songuyen < 0){
+        document.getElementById("chuyensonguyen").innerText= "Day la so nho hon 0"
+    }else {
+        document.getElementById("chuyensonguyen").innerText= "Day la so lon hon 0"
+    }
+    if ( songuyen == 0) {
+        document.getElementById("chuyensonguyen").innerText= "Hai so bang nhau"
+    }
+}
+function sosanhabc() {
+    let songuyena = parseInt(document.getElementById("songuyena").value);
+    let songuyenb = parseInt(document.getElementById("songuyenb").value);
+    let songuyenc = parseInt(document.getElementById("songuyenc").value);
+    if (songuyena > songuyenb && songuyena > songuyenc) {
+        document.getElementById("hienthiketqua").innerText = "Biggest number is " + songuyena;
+
+    }
+    else if (songuyena < songuyenb && songuyenc < songuyenb) {
+        document.getElementById("hienthiketqua").innerText = "Biggest number is " + songuyenb;
+    } else {
+        document.getElementById("hienthiketqua").innerText = "Biggest number is " + songuyenc
+    }
+}
+function xemloaihocsinh() {
+    var diemkiemtra, diemthigiuaky, diemthicuoiky;
+    diemkiemtra = parseInt(document.getElementById("diemkiemtra").value);
+    diemthigiuaky = parseInt(document.getElementById("diemthigiuaky").value);
+    diemthicuoiky = parseInt(document.getElementById("diemthicuoiky").value);
+
+    if (diemthicuoiky > 10 || diemthigiuaky > 10 || diemthicuoiky > 10 )
+    { document.getElementById("xemloaihocsinh").innerText = "Vui lòng nhập đúng kêt quả"  }
+    else if ((diemthicuoiky + diemthigiuaky + diemkiemtra) / 3 >= 8) {
+        document.getElementById("xemloaihocsinh").innerText = "Học sinh giỏi"
+    } else if ((diemthicuoiky + diemthigiuaky + diemkiemtra) / 3 >= 6) {
+        document.getElementById("xemloaihocsinh").innerText = "Học sinh khá"
+    } else if  ((diemthicuoiky + diemthigiuaky + diemkiemtra) / 3 >= 5) {
+        document.getElementById("xemloaihocsinh").innerText = "Học sinh trung bình"
+    } else {
+        document.getElementById("xemloaihocsinh").innerText = "Hoc sinh yếu"
+    }
+}
+
+</script>
+</body>
+
+</html>

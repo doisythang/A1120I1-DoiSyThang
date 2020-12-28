@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SapaVietNam</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+<h3>Write your information</h3>
+    Name:<br>
+    <input type="text"> <br>
+    Number of CMND:<br>
+    <input type="number"> <br>
+    Your birthdate:<br>
+    <input type="date"> <br>
+    Email:<br>
+    <input type="text"> <br>
+    Andress: <br>
+    <input type="text"> <br>
+    Customer Kind: <br>
+    <select>
+        <option selected>Select</option>
+        <option value="Diamond">Diamond</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Sliver</option>
+        <option value="Member">Member</option>
+    </select><br>
+    Sale:<br> <input type="number" id="sale"><br>
+    Soluondikem: <br>
+    <input type="number"> <br>
+
+    Rent days:<br>
+    <input type="number" id="days"> <br>
+
+    Kind Service: <br> <select id="service">
+    <option selected>Select</option>
+    <option value="500">Villa:500$/day</option>
+    <option value="300">House:300$/day</option>
+    <option value="100">Room:100$/1day</option>
+</select> <br>
+    Kind room:<br> <select>
+    <option selected>Select</option>
+    <option>Vip</option>
+    <option>Business</option>
+    <option>Normal</option>
+</select><br>
+    <button onclick="pay()">Pay</button>
+<br><br>
+The cost you have to pay <span id="cost"></span>$
+<script>
+    function pay() {
+        var a, b, c, d;
+        a = parseInt(document.getElementById("service").value);
+        b = parseInt(document.getElementById("days").value);
+        c = parseInt(document.getElementById("sale").value);
+        d = a * b * (1 - c / 100);
+        document.getElementById("cost").innerText = d;
+    }
+
+</script>
+</body>
+</html>

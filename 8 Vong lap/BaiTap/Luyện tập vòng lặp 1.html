@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 1</title>
+</head>
+<body>
+<h3>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành</h3>
+<button onclick="bai1()">Click</button>
+<h3>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ
+</h3>
+<form>
+    Nhập nhiệt độ :<input id="nhietdo" type="number">
+    <input onclick="bai2()" type="button" value="Check">
+</form>
+<h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên</h3>
+<button onclick="daysofibonacci()">Hiển thị</button>
+
+
+
+
+
+
+
+
+<script>
+    function bai1() {
+        for ( let a = 1 ; a <= 100; a++) {
+            console.log(a);
+            if (a == 99){ alert("Đã hoàn thành")
+            }
+        }
+    }
+  function bai2() { var nhietdo;
+  nhietdo = parseInt(document.getElementById("nhietdo").value);
+  if ( nhietdo < 20 ) { alert("Yêu cầu tăng nhiệt độ")
+  for ( nhietdo = nhietdo; nhietdo < 30; nhietdo ++) { alert("Tăng nhiệt độ lên :" + nhietdo) }   }
+  else if ( nhietdo > 100 ) { alert("Yêu cầu giảm nhiệt độ")} {
+      for (nhietdo = nhietdo ; nhietdo > 90 ; nhietdo--) { alert("Giảm nhiệt độ suống :" + nhietdo) }
+      }
+  }
+  function daysofibonacci() {
+  
+  
+  
+  }
+
+</script>
+</body>
+</html>

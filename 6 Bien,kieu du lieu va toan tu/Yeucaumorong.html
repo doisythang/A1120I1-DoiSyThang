@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh yeu cau mo rong</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="4"><input type="text" id="cal"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="(" onclick="input('(')"></td>
+        <td><input type="button" value=")" onclick="input(')')"></td>
+        <td><input type="button" value="%" onclick="input('%')"></td>
+        <td><input type="button" value="AC" onclick="clearAll()"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><input type="button" value="7" onclick="input('7')"></td>
+        <td><input type="button" value="8" onclick="input('8')"></td>
+        <td><input type="button" value="9" onclick="input('9')"></td>
+        <td><input type="button" value=":" onclick="input(':')"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><input type="button" value="4" onclick="input('4')"></td>
+        <td><input type="button" value="5" onclick="input('5')"></td>
+        <td><input type="button" value="6" onclick="input('6')"></td>
+        <td><input type="button" value="*" onclick="input('*')"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><input type="button" value="1" onclick="input('1')"></td>
+        <td><input type="button" value="2" onclick="input('2')"></td>
+        <td><input type="button" value="3" onclick="input('3')"></td>
+        <td><input type="button" value="-" onclick="input('-')"></td>
+    </tr>
+    <br>
+    <tr>
+        <td><input type="button" value="0"></td>
+        <td><input type="button" value="."></td>
+        <td><input onclick="(document.getElementById('cal').value = eval(document.getElementById('cal').value))" value="=" type="button" ></td>
+        <td><input type="button" value="+" onclick="input('+')"></td>
+    </tr>
+    <script>
+        function input(temp) {
+            document.getElementById("cal").value += temp;
+        }
+        function clearAll() {
+            document.getElementById("cal").value = "";
+
+        }
+    </script>
+
+
+</table>
+</body>
+</html>
